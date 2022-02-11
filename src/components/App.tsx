@@ -36,16 +36,29 @@ export function App(): React.ReactElement {
     const logParam = url.get('log')
     const log = React.useMemo(() => JSON.parse(decodeURIComponent(logParam ?? '[]')), [logParam])
     return <div className="App">
-        <div className="menu">
+        <div className="sidebar">
             <h1><Expression expr={['λ', ['literal', 'f'], '.', ['literal', 'engine']]} /></h1>
-            {examples.map(([name, value]) => <div>
-                <a href={value} key={name}>{name}</a>
-            </div>)}
+            <div className="menu">
+                {examples.map(([name, value]) => <div>
+                    <a href={value} key={name}>{name}</a>
+                </div>)}
+            </div>
             <p>
-                Most of the explanations were copied from Wikipedia
+                The explanations were copied from
+                <a href="https://en.wikipedia.org/wiki/Lambda_calculus"> Wikipedia</a>
             </p>
             <p>
-                Made by <a href='https://lbfalvy.github.io'>Lawrence Bethlenfalvy</a>
+                Read the source on 
+                <a href="https://github.com/lbfalvy/f.engine"> Github</a>
+            </p>
+            <p>
+                Made by 
+                <div>
+                    <a href='https://lbfalvy.github.io'>Lawrence Bethlenfalvy</a>
+                </div>
+                <div className="kofi">
+                    <a href="https://ko-fi.com/lbfalvy">Buy me a coffee!</a>
+                </div>
             </p>
         </div>
         <Repl init={log} share={log => {

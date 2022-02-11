@@ -30155,7 +30155,7 @@
 	            React.createElement("button", { type: 'submit' }, "Run")));
 	}
 
-	___$insertStylesToHeader(".App {\n  display: flex;\n}\n.App > .menu {\n  font-family: Montserrat sans-serif;\n  flex: 0 0 min-content;\n  background: #181818;\n  padding: 10px;\n}\n.App > .menu a {\n  display: block;\n  color: white;\n  white-space: nowrap;\n  text-decoration: none;\n}\n.App > .menu p {\n  font-style: italic;\n  color: #777;\n  font-size: 0.9em;\n}\n.App > .Repl {\n  flex: 1 1 auto;\n  height: 100%;\n}");
+	___$insertStylesToHeader(".App {\n  display: flex;\n}\n.App > .sidebar {\n  flex: 0 0 min-content;\n  display: flex;\n  flex-direction: column;\n  font-family: Montserrat sans-serif;\n  background: #181818;\n  padding: 10px;\n}\n.App > .sidebar > * {\n  flex: 0 0 auto;\n}\n.App > .sidebar .menu {\n  flex: 0 1 auto;\n  overflow-y: auto;\n  margin-bottom: 10px;\n}\n.App > .sidebar a {\n  color: white;\n  white-space: nowrap;\n  text-decoration: none;\n}\n.App > .sidebar .kofi {\n  font-size: 0.9em;\n  text-align: right;\n}\n.App > .sidebar .kofi > a {\n  color: #66f;\n}\n.App > .sidebar p {\n  font-style: italic;\n  color: #777;\n  font-size: 0.9em;\n  margin-top: 7px;\n  margin-bottom: 0;\n}\n.App > .Repl {\n  flex: 1 1 auto;\n  height: 100%;\n}");
 
 	const examples = [
 	    [
@@ -30188,15 +30188,23 @@
 	    const logParam = url.get('log');
 	    const log = React.useMemo(() => JSON.parse(decodeURIComponent(logParam ?? '[]')), [logParam]);
 	    return React.createElement("div", { className: "App" },
-	        React.createElement("div", { className: "menu" },
+	        React.createElement("div", { className: "sidebar" },
 	            React.createElement("h1", null,
 	                React.createElement(Expression, { expr: ['λ', ['literal', 'f'], '.', ['literal', 'engine']] })),
-	            examples.map(([name, value]) => React.createElement("div", null,
-	                React.createElement("a", { href: value, key: name }, name))),
-	            React.createElement("p", null, "Most of the explanations were copied from Wikipedia"),
+	            React.createElement("div", { className: "menu" }, examples.map(([name, value]) => React.createElement("div", null,
+	                React.createElement("a", { href: value, key: name }, name)))),
 	            React.createElement("p", null,
-	                "Made by ",
-	                React.createElement("a", { href: 'https://lbfalvy.github.io' }, "Lawrence Bethlenfalvy"))),
+	                "The explanations were copied from",
+	                React.createElement("a", { href: "https://en.wikipedia.org/wiki/Lambda_calculus" }, " Wikipedia")),
+	            React.createElement("p", null,
+	                "Read the source on",
+	                React.createElement("a", { href: "https://github.com/lbfalvy/f.engine" }, " Github")),
+	            React.createElement("p", null,
+	                "Made by",
+	                React.createElement("div", null,
+	                    React.createElement("a", { href: 'https://lbfalvy.github.io' }, "Lawrence Bethlenfalvy")),
+	                React.createElement("div", { className: "kofi" },
+	                    React.createElement("a", { href: "https://ko-fi.com/lbfalvy" }, "Buy me a coffee!")))),
 	        React.createElement(Repl, { init: log, share: log => {
 	                if (log.length == 0)
 	                    url.delete('log');

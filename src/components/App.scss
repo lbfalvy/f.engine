@@ -1,20 +1,37 @@
 .App {
     display: flex;
-    & > .menu {
-        font-family: Montserrat sans-serif;
+    & > .sidebar {
         flex: 0 0 min-content;
+        display: flex;
+        flex-direction: column;
+        & > * { flex: 0 0 auto }
+        .menu {
+            flex: 0 1 auto;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        font-family: Montserrat sans-serif;
         background: #181818;
         padding: 10px;
         a {
-            display: block;
             color: white;
             white-space: nowrap;
             text-decoration: none;
+        }
+        .kofi {
+            font-size: .9em;
+            & > a {
+                color: #66f;
+            }
+            text-align: right;
         }
         p {
             font-style: italic;
             color: #777;
             font-size: .9em;
+            margin-top: 7px;
+            margin-bottom: 0;
         }
     }
     & > .Repl {
