@@ -30091,7 +30091,7 @@
 	    return React.createElement("button", { className: "RightButton", onClick: onClick }, children);
 	}
 
-	___$insertStylesToHeader(".Title {\n  margin: 0px;\n  color: white;\n  display: flex;\n  font-family: Montserrat sans-serif;\n  font-weight: 300;\n}\n.Title .content {\n  flex: 0 0 auto;\n}\n.Title .filler {\n  flex: 1 1 auto;\n  align-self: center;\n  border: 1px solid #fff8;\n  margin-left: 5px;\n}");
+	___$insertStylesToHeader(".Title {\n  margin: 0px;\n  color: white;\n  display: flex;\n  font-family: Montserrat, sans-serif;\n  font-weight: 300;\n}\n.Title .content {\n  flex: 0 0 auto;\n}\n.Title .filler {\n  flex: 1 1 auto;\n  align-self: center;\n  border: 1px solid #fff8;\n  margin-left: 5px;\n}");
 
 	function Title({ children }) {
 	    return React.createElement("h5", { className: "Title" },
@@ -30155,7 +30155,7 @@
 	            React.createElement("button", { type: 'submit' }, "Run")));
 	}
 
-	___$insertStylesToHeader(".App {\n  display: flex;\n}\n.App > .sidebar {\n  flex: 0 0 min-content;\n  display: flex;\n  flex-direction: column;\n  font-family: Montserrat sans-serif;\n  background: #181818;\n  padding: 10px;\n}\n.App > .sidebar > * {\n  flex: 0 0 auto;\n}\n.App > .sidebar .menu {\n  flex: 0 1 auto;\n  overflow-y: auto;\n  margin-bottom: 10px;\n}\n.App > .sidebar a {\n  color: white;\n  white-space: nowrap;\n  text-decoration: none;\n}\n.App > .sidebar .kofi {\n  font-size: 0.9em;\n  text-align: right;\n}\n.App > .sidebar .kofi > a {\n  color: #66f;\n}\n.App > .sidebar p {\n  font-style: italic;\n  color: #777;\n  font-size: 0.9em;\n  margin-top: 7px;\n  margin-bottom: 0;\n}\n.App > .Repl {\n  flex: 1 1 auto;\n  height: 100%;\n}");
+	___$insertStylesToHeader(".App {\n  display: flex;\n}\n.App > .sidebar {\n  flex: 0 0 min-content;\n  display: flex;\n  flex-direction: column;\n  font-family: Montserrat, sans-serif;\n  background: #181818;\n  padding: 10px;\n}\n.App > .sidebar > * {\n  flex: 0 0 auto;\n}\n.App > .sidebar .menu {\n  flex: 0 1 auto;\n  overflow-y: auto;\n  margin-bottom: 10px;\n}\n.App > .sidebar a {\n  color: white;\n  white-space: nowrap;\n  text-decoration: none;\n}\n.App > .sidebar .kofi {\n  font-size: 0.9em;\n  text-align: right;\n}\n.App > .sidebar .kofi > a {\n  color: #66f;\n}\n.App > .sidebar p {\n  font-style: italic;\n  color: #777;\n  font-size: 0.9em;\n  margin-top: 7px;\n  margin-bottom: 0;\n}\n.App > .Repl {\n  flex: 1 1 auto;\n  height: 100%;\n}");
 
 	const examples = [
 	    [
